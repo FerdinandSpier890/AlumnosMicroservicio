@@ -13,6 +13,11 @@ namespace AlumnosMicorservicio.Controllers
     {
         private readonly IMediator _mediator;
 
+        public AlumnosController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         [HttpPost]
         public async Task<ActionResult<Unit>> Crear(NuevoAlumno.EjecutarAlumno data)
         {
@@ -20,13 +25,13 @@ namespace AlumnosMicorservicio.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<AlumnoDto>>> GetAutores()
+        public async Task<ActionResult<List<AlumnoDto>>> GetAlumno()
         {
             return await _mediator.Send(new ConsultaAlumno.ListaAlumnos());
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<AlumnoDto>> GetAutorLibro(string id)
+        public async Task<ActionResult<AlumnoDto>> GetAlumnoInscrito(string id)
         {
             return await _mediator.Send(new AlumnoFiltro.AlumnoUnico { AlumnoInscritoGuid = id });
         }

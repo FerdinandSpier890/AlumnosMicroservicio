@@ -34,7 +34,7 @@ namespace AlumnosMicorservicio.Aplicacion
                     .Where(p => p.AlumnoInscritoGuid == request.AlumnoInscritoGuid).FirstOrDefaultAsync();
                 if (alumno == null)
                 {
-                    throw new Exception("No se Encontró el Autor");
+                    throw new Exception("No se Encontró el Alumno");
                 }
                 var alumnoDto = _mapper.Map<AlumnoInscrito, AlumnoDto>(alumno);
                 return alumnoDto;
