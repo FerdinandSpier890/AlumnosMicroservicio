@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace AlumnosMicorservicio.Aplicacion
 {
     public class NuevoAlumno
-    {
+    {//hola
         public class EjecutarAlumno : IRequest
         {
             public string NombreAlumno { get; set; }
