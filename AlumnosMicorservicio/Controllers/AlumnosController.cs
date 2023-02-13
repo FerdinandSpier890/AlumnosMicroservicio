@@ -13,6 +13,7 @@ namespace AlumnosMicorservicio.Controllers
     {
         private readonly IMediator _mediator;
 
+        //Se agrego el constructor para la inyeccion de dependencias
         public AlumnosController(IMediator mediator)
         {
             _mediator = mediator;
